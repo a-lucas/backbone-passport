@@ -2,9 +2,9 @@ Thi package contains the following fuctionalities :
 
 * Express server running on port 5050
 * ACL authorization (3 levels : 'guest', 'user', and 'admin'
-** 'guest' can only access the #login page
-** 'user' (viia facebook) can see the feed
-** 'admin' can see the admin feed (not tested);
+...* 'guest' can only access the #login page
+...* 'user' (viia facebook) can see the feed
+...* 'admin' can see the admin feed (not tested);
 * Passport login with facebook & github
 * Backbone frontent
 
@@ -12,6 +12,7 @@ Thi package contains the following fuctionalities :
 #How to run #
 
 ```
+npm install -g grunt-cli
 npm install
 cd client
 bower install
