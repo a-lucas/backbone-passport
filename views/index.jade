@@ -1,0 +1,65 @@
+doctype html
+html(lang="en")
+    head
+        title= BackBone
+        script(src='bower_components/jquery/dist/jquery.min.js')
+        script(src='bower_components/underscore/underscore-min.js')
+        script(src='bower_components/backbone/backbone.js')
+
+        meta(http-equiv='Content-type', content='text/html; charset=UTF-8')
+
+    body
+        script#deniedViewTemplate(type='text/template')
+            h2 NotAuthorized
+
+        script#adminViewTemplate(type='text/template')
+            h2 admin roles
+            ul <% _.each(rssList, function(rss) { %><li><%=rss.title%></li><%});%>
+
+            section#main
+                ul <% _.each(rssList, function(rss) { %><li><%=rss.title%></li><%});%>
+
+
+        script#rssViewTemplate(type="text/template")
+            h2 user roles
+
+            section#main
+                ul <% _.each(rssList, function(rss) { %><li><%=rss.title%></li><%});%>
+
+        script#feedViewTemplate(type='text/template')
+            h2 Feed view
+            p Hi <%= name %>, your facebook id is : <%= facebookId %>
+
+            section#main
+                ul <% _.each(rssList, function(rss) { %><li><%=rss.title%></li><%});%>
+
+        script#loginViewTemplate(type='text/template')
+            h2 Login
+            a(href="/auth/facebook") login with facebook ( User permission )
+            br
+            a(href="/auth/github") login with github (Admin permission )
+
+        script#menuViewTemplate(type='text/template')
+            div
+                a#login(href='#login') Login
+                span  |
+                a#logout(href='/logout') Logout
+                span  |
+                hr
+                a#userFeeds(href='#userFeed') Feed (User)
+                span  |
+                a#adminFeeds(href='#adminFeed') Feed (Admin)
+
+
+
+
+        div(class='menu')
+        div(class='panel')
+
+         script(src="scripts/clientModel.js")
+         script(src="scripts/router.js")
+         script.
+             var user = !{JSON.stringify(user)}
+         script.
+            var router = new Router();
+            Backbone.history.start();

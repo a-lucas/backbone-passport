@@ -1,0 +1,25 @@
+{
+  "name": "backbone",
+  "authors": [
+    "Antoine LUCAS <cooluhuru@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "latest",
+    "underscore": "^1.8.3",
+    "backbone": "^1.2.3",
+    "font-awesome": "^4.5.0"
+  }
+}
